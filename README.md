@@ -15,22 +15,58 @@ This Python script captures a screenshot of a given webpage at a specified resol
 
 ### 1. Install Dependencies
 
-You need to install **Selenium**:
+You need to install **Selenium** and **Validators**:
 
 ```bash
-pip install selenium
+pip install selenium validators
 ```
 
 ### 2. Install Google Chrome
 
 Ensure that **Google Chrome** is installed on your system.
 
-### 3. Download ChromeDriver
+### 3. Install ChromeDriver
 
-Download the **Chrome WebDriver** that matches your Chrome version from:
-[ChromeDriver Downloads](https://sites.google.com/chromium.org/driver/)
+To install ChromeDriver:
 
-Extract and place `chromedriver` in the project directory or add it to your system `PATH`.
+1. Find your Chrome version:
+
+   - Open Chrome and go to `chrome://settings/help`
+   - Note down the version number (e.g., 120.0.0.1)
+
+2. Download the corresponding **ChromeDriver** version from:
+
+   - [ChromeDriver Downloads](https://sites.google.com/chromium.org/driver/)
+
+3. Extract and place `chromedriver` in the project directory or add it to your system `PATH`.
+
+### 4. Add ChromeDriver to PATH
+
+#### macOS
+
+```bash
+echo 'export PATH="$PATH:~/path-to-chromedriver"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+#### Windows
+
+1. Move `chromedriver.exe` to a folder (e.g., `C:\chromedriver`)
+2. Open **System Properties** → **Advanced** → **Environment Variables**
+3. Under **System Variables**, find `Path` and click **Edit**
+4. Click **New** and add `C:\chromedriver`
+5. Click **OK**, restart the terminal, and verify with:
+
+```powershell
+chromedriver --version
+```
+
+#### Linux
+
+```bash
+echo 'export PATH="$PATH:/path-to-chromedriver"' >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## 💻 Usage
 
